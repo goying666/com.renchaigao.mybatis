@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!--相当于UserMapper接口的实现 namespace必须是UserMapper类路径-->
+<mapper namespace="com.renchaigao.mybatis.user.userMapper">
+
+    <!--//新增用户信息-->
+    <insert id="addUser" parameterType="com.renchaigao.mybatis.user.users" useGeneratedKeys="true" keyProperty="id">
+        insert into users (id,nickname,image,unionID,userAddress,myrankID,vip,mytermsID,myanswerID)
+        values(#{id},#{nickname},#{image},#{unionID},#{address},#{myrankID},#{vip},#{mytermsID},#{myanswerID})
+    </insert>
+
+    <!--&lt;!&ndash;更新用户信息&ndash;&gt;-->
+    <!--<update id="updateUsers" parameterType="com.zujuba.user.users">-->
+        <!--update users set id = #{id},name = #{name},image = #{image},state = #{state},userlogin = #{userlogin},gender = #{gender},brithday = #{brithday},-->
+        <!--where id = #{id}-->
+    <!--</update>-->
+
+    <!--&lt;!&ndash;查询用户信息&ndash;&gt;-->
+    <!--<select id="selectIdFromName" resultType="com.zujuba.user.users">-->
+        <!--SELECT id FROM users WHERE name=#{name}-->
+    <!--</select>-->
+
+
+</mapper>
